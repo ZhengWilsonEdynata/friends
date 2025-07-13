@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>FRIENDS - 25 Years Fan Tribute</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta
+    name="description"
+    content="A tribute to the iconic sitcom FRIENDS. Meet the characters, relive the best episodes, and laugh with your favorite Central Perk gang."
+  />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&family=Open+Sans&display=swap" rel="stylesheet" />
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+/>
+
+<style>
+  :root {
+    --yellow: #f9d71c;       /* Bright yellow like FRIENDS frame */
+    --coffee: #32127A;       /* Persian Violet 1419 */
+    --light-bg: #f9f3eb;     /* Light background */
+    --dark-bg: #32127A;      /* Persian Violet 1419 */
+  }
+
+  * {
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+  }
+
+  body,
+  html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    background-color: var(--light-bg);
+    color: #333;
+  }
+
+  header {
+    background-color: var(--dark-bg);
+    padding: 20px;
+    text-align: center;
+    color: var(--yellow);
+  }
+
+  header img {
+    width: 260px;
+  }
+
+  nav {
+    background-color: #fff;
+    text-align: center;
+    padding: 10px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  nav a {
+    margin: 0 20px;
+    color: var(--coffee);
+    font-weight: bold;
+    text-decoration: none;
+  }
+
+  nav a:hover {
+    color: var(--yellow);
+  }
+
+  .icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+    padding-bottom: 10px;
+  }
+
+  .icons li {
+    list-style: none;
+  }
+
+  .icons a {
+    color: var(--yellow);
+    font-size: 1.5rem;
+  }
+
+  /* === HERO / SECTION1 === */
+  #section1 {
+    height: 100vh;
+    background-image: linear-gradient(
+        rgba(0, 0, 0, 0.5),
+        rgba(0, 0, 0, 0.7)
+      ),
+      url('images/friends.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    font-family: 'Kalam', cursive;
+    position: relative;
+  }
+
+  #section1 .hero-text {
+    font-size: 3rem;
+    padding: 20px 40px;
+    background-color: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.6);
+    animation: fadeIn 2s ease-in-out;
+  }
+
+  /* Scroll down arrow */
+  #section1 .scroll-down {
+    position: absolute;
+    bottom: 30px;
+    font-size: 2rem;
+    color: white;
+    animation: bounce 2s infinite;
+    cursor: pointer;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes bounce {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(10px);
+    }
+  }
+
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+  }
+
+  h2 {
+    font-family: 'Kalam', cursive;
+    font-size: 2.5rem;
+    border-bottom: 2px solid var(--yellow);
+    padding-bottom: 10px;
+    margin-top: 50px;
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  .card {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+  }
+
+  .card:hover {
+    transform: scale(1.03);
+  }
+
+  .card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+
+  .card h3 {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    background-color: var(--yellow);
+  }
+
+  /* Episode list styles */
+  .episode-list li {
+    margin-bottom: 10px;
+    padding-left: 10px;
+    list-style: disc;
+  }
+
+  .episode-list a {
+    color: var(--coffee);
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .episode-list a:hover {
+    color: var(--dark-bg);
+    text-decoration: underline;
+  }
+
+  /* Quotes */
+  .quotes {
+    background: var(--yellow);
+    padding: 30px;
+    margin-top: 40px;
+    font-style: italic;
+    border-left: 5px solid var(--coffee);
+  }
+
+  .quotes a {
+    color: var(--dark-bg);
+    text-decoration: none;
+  }
+
+  .quotes a:hover {
+    text-decoration: underline;
+  }
+
+  /* Gallery */
+  .list-grid-trimming {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .list a img {
+    width: 100%;
+    border-radius: 8px;
+    display: block;
+  }
+
+  footer {
+    background: var(--dark-bg);
+    color: var(--yellow);
+    text-align: center;
+    padding: 20px;
+    margin-top: 60px;
+  }
+
+  /* Scroll to top button */
+  .pagetop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: var(--coffee);
+    border-radius: 50%;
+    padding: 10px 15px;
+    color: var(--yellow);
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: inline-block;
+    z-index: 1000;
+    text-align: center;
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 600px) {
+    #section1 .hero-text {
+      font-size: 2rem;
+      padding: 10px 20px;
+    }
+
+    h2 {
+      font-size: 2rem;
+    }
+  }
+
+  #musicToggle, #musicToggle i {
+    color: var(--yellow) !important;
+    cursor: pointer;
+    font-size: 1.8rem;
+    background: transparent;
+    border: none;
+  }
+
+#section5 .gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  max-width: 1000px;
+  margin: 20px auto;
+}
+
+#section5 .gallery-item img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+#section5 .gallery-item img:hover {
+  transform: scale(1.05);
+}
+
+/* Lightbox Styles */
+#gallery-lightbox {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.95);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+#gallery-lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+#gallery-lightbox .close,
+#gallery-lightbox .arrow {
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  position: absolute;
+  user-select: none;
+}
+#gallery-lightbox .close {
+  top: 30px;
+  right: 40px;
+}
+#gallery-lightbox .arrow.left {
+  left: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+#gallery-lightbox .arrow.right {
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pagetop {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #fdd835; /* Yellow circle */
+  color: #32127A; /* Dark purple arrow */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 999;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.pagetop:hover {
+  transform: scale(1.1);
+  background-color: #ffe657; /* Slightly lighter yellow on hover */
+}
+
+.pagetop i {
+  font-size: 1.5rem;
+  color: #32127A; /* Arrow color */
+}
+</style>
+</head>
+
+<body>
+<header>
+  <!-- Logo -->
+  <h1 id="logo">
+    <img src="images/logo.png" alt="FRIENDS Web Site" />
+  </h1>
+
+  <!-- Navigation -->
+  <div id="menubar">
+    <nav>
+      <a href="#section1">Home</a>
+      <a href="#section2">Characters</a>
+      <a href="#section3">Top Episodes</a>
+      <a href="#section4">Iconic Quotes</a>
+      <a href="#section5">Gallery</a>
+    </nav>
+
+    <!-- Social Media Icons -->
+    <ul class="icons">
+      <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+      <li><a href="#"><i class="fab fa-youtube"></i></a></li>
+      <li><a href="#"><i class="fab fa-facebook"></i></a></li>
+      <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+    </ul>
+  </div>
+
+<div id="musicPlayer" class="music-bar" style="display: flex; align-items: center; gap: 10px; background: #32127A; color: #fdd835; padding: 8px 15px; border-radius: 8px; margin: 0 auto 20px auto; width: fit-content; max-width: 100%; overflow-x: auto;">
+  <button id="musicToggle" aria-label="Play or pause theme song" style="background: none; border: none; color: #fdd835; font-size: 1.8rem; cursor: pointer;">
+    <i id="musicIcon" class="fas fa-play" style="color: #fdd835;"></i>
+  </button>
+  <span class="track-info" style="font-weight: bold; font-family: 'Open Sans', sans-serif; white-space: nowrap;">
+    The Rembrandts – I'll Be There for You
+  </span>
+</div>
+
+<audio id="themeSong" preload="auto">
+  <source src="audio/friends-theme.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
+
+<script>
+const musicToggle = document.getElementById('musicToggle');
+const musicIcon = document.getElementById('musicIcon');
+const themeSong = document.getElementById('themeSong');
+
+musicToggle.addEventListener('click', () => {
+  if (themeSong.paused) {
+    themeSong.play();
+    musicIcon.classList.remove('fa-play');
+    musicIcon.classList.add('fa-pause');
+  } else {
+    themeSong.pause();
+    musicIcon.classList.remove('fa-pause');
+    musicIcon.classList.add('fa-play');
+  }
+});
+
+themeSong.addEventListener('ended', () => {
+  musicIcon.classList.remove('fa-pause');
+  musicIcon.classList.add('fa-play');
+});
+</script>
+</header>
+
+  <!-- Section 1: Hero with background image -->
+  <section id="section1">
+    <div class="hero-text">Celebrating 31 Years of FRIENDS</div>
+    <a href="#section2" class="scroll-down" aria-label="Scroll down to Characters">
+      <i class="fas fa-chevron-down"></i>
+    </a>
+  </section>
+
+  <main>
+    <!-- Section 2: Characters -->
+    <section id="section2" class="section">
+<style>
+  #section2 .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin-top: 20px;
+  }
+
+  #section2 .card {
+    background: none;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+  }
+
+  #section2 .card:hover {
+    transform: scale(1.03);
+  }
+
+  /* Make the link fill the card */
+  #section2 .card a {
+    display: block;
+    color: inherit;
+    text-decoration: none;
+    height: 100%;
+  }
+
+  #section2 .card img {
+    width: 100%;
+    height: 280px; /* fixed height */
+    object-fit: cover;
+    display: block;
+  }
+
+  #section2 .card h3 {
+    text-align: center;
+    padding: 15px;
+    margin: 0;
+    background-color: var(--yellow);
+  }
+  
+#section3 .episode-img {
+  width: 250px;
+  height: 160px;
+  overflow: hidden;
+  border-radius: 6px;
+  flex-shrink: 0;
+}
+
+#section3 .episode-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+</style>
+
+<section id="section2" class="section">
+  <h2>Meet the FRIENDS</h2>
+  <div class="grid">
+    <div class="card">
+      <a href="https://friends.fandom.com/wiki/Rachel_Greene">
+        <img src="images/rachel.webp" alt="Rachel">
+        <h3>Rachel Green</h3>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://friends.fandom.com/wiki/Ross_Geller">
+        <img src="images/ross.webp" alt="Ross">
+        <h3>Ross Geller</h3>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://friends.fandom.com/wiki/Monica_Geller">
+        <img src="images/monica.webp" alt="Monica">
+        <h3>Monica Geller</h3>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://friends.fandom.com/wiki/Chandler_Bing">
+        <img src="images/chandler.webp" alt="Chandler">
+        <h3>Chandler Bing</h3>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://friends.fandom.com/wiki/Phoebe_Buffay">
+        <img src="images/phoebe.webp" alt="Phoebe">
+        <h3>Phoebe Buffay</h3>
+      </a>
+    </div>
+    <div class="card">
+      <a href="https://friends.fandom.com/wiki/Joey_Tribbiani">
+        <img src="images/joey.webp" alt="Joey">
+        <h3>Joey Tribbiani</h3>
+      </a>
+    </div>
+  </div>
+</section>
+
+    <!-- Section 3: Top Episodes -->
+<section id="section3" class="section">
+  <h2>Top 5 Best Episodes</h2>
+  <div class="top-episodes">
+    <div class="episode-card">
+      <div class="rank"><h3>TOP 1</h3></div>
+      <div class="episode-img">
+        <img src="images/embryos.webp" alt="The One with the Embryos">
+      </div>
+      <div class="episode-content">
+        <h4>Season 4, Episode 12: The One with the Embryos</h4>
+        <p>
+          A truly classic episode of “Friends,” this middle-of-Season-4 story sees Phoebe becoming a surrogate for her brother (Giovanni Ribisi) and his wife (Debra Jo Rupp). That piece of the story is sped up a bit unrealistically (but hey, Phoebe’s body has always been a little faster than Western medicine), but it is touching and also a really clever way to write in Kudrow’s real-life pregnancy. That sweet and slightly more serious story is balanced by Monica and Rachel getting embroiled in a gambling battle with Chandler and Joey, culminating in them losing their apartment in a game of trivia. It was a quick way to pepper in previously unknown facts about beloved characters, and it created easy go-to questions for all the real-life “Friends” trivia games that have popped up as the series has gained in popularity.
+        </p>
+        <a class="watch-link" href="https://youtu.be/v1xXlxDHWPU?si=NgT7tJt-Hm-hTf3g" target="_blank" rel="noopener noreferrer">▶ Watch Episode</a>
+      </div>
+    </div>
+    <div class="episode-card">
+      <div class="rank"><h3>TOP 2</h3></div>
+      <div class="episode-img">
+        <img src="images/resolutions.avif" alt="The One with all the Resolutions">
+      </div>
+      <div class="episode-content">
+        <h4>Season 5, Episode 11: The One with all the Resolutions</h4>
+        <p>
+          This is a rare episode where all of the friends have individual moments to shine as they commit to bettering themselves with the start of the new year. Not all resolutions are created equal, so some are certainly more interesting than others: Ross’ idea of trying a new thing every day only gets exciting when he buys a pair of leather pants — and then gets stuck in them while on a date, while Chandler agreeing not to make fun of his friends doesn’t pay off until he gives it up and lets loose an impressive string of insults. Where things get really special is in how the episode manages to serialize a part of the situational event: Rachel saying she won’t gossip could have easily been a one-off like the others, wrapped up neatly at the end of the episode, but when she overhears Monica and Chandler making plans, she realizes they are together and sets up a hilarious storyline for episodes to come about who knows and who Monica and Chandler knows knows.
+        </p>
+        <a class="watch-link" href="https://youtu.be/TLPdxz2wioA?si=NdMGgMo_rfhw9h0v" target="_blank" rel="noopener noreferrer">▶ Watch Episode</a>
+      </div>
+    </div>
+    <div class="episode-card">
+      <div class="rank"><h3>TOP 3</h3></div>
+      <div class="episode-img">
+        <img src="images/prom.jpg" alt="The One with the Prom Video">
+      </div>
+      <div class="episode-content">
+        <h4>Season 2, Episode 14: The One with the Prom Video</h4>
+        <p>
+          The first glimpse at Fat Monica and pre-rhinoplasty Rachel also comes with a mustachioed Ross, but it isn’t all just for kicks. At this point in the show’s run, Ross and Rachel had gotten close to getting together, but the pro and con list he made about being with her versus his girlfriend at the time offended her. Here, though, she finally understands just how much he has cared for her, and for how long, when a video from her teenage years reveals he got himself ready to take her to the prom when it looked like her date was bailing on her. The episode also entered a new definition for “lobsters” into the lexicon.
+        </p>
+        <a class="watch-link" href="https://youtu.be/PvzA98Zoup4?si=sqdT0DlAwlvb2yjU" target="_blank" rel="noopener noreferrer">▶ Watch Episode</a>
+      </div>
+    </div>
+    <div class="episode-card">
+      <div class="rank"><h3>TOP 4</h3></div>
+      <div class="episode-img">
+        <img src="images/armadillo.jpg" alt="The One with the Holiday Armadillo">
+      </div>
+      <div class="episode-content">
+        <h4>Season 7, Episode 10: The One with the Holiday Armadillo</h4>
+        <p>
+          Hanukkah hardly gets represented on television, but “Friends” featured characters who were Jewish and in the seventh season, Ross’ son Ben (Cole and Dylan Sprouse) is old enough to learn about the festival of lights. Both because this is a sitcom and because Ross is, well, Ross, his best-intentioned plans for the holiday season go awry. When all the costume store has left so close to the holidays is an armadillo suit, Ross takes it and says he is Santa’s representative for “all the southern states — and Mexico,” and also part Jewish, in order to finally teach his son about his religious traditions. And with this tight 22 minute episode, a new icon of the winter holidays was born.
+        </p>
+        <a class="watch-link" href="https://youtu.be/31Gk9p4mi70?si=VjmcoF7v3f6SbQRZ" target="_blank" rel="noopener noreferrer">▶ Watch Episode</a>
+      </div>
+    </div>
+    <div class="episode-card">
+      <div class="rank"><h3>TOP 5</h3></div>
+      <div class="episode-img">
+        <img src="images/proposal.jpg" alt="The One with the Proposal">
+      </div>
+      <div class="episode-content">
+        <h4>Season 6, Episode 23 and 24: The One with the Proposal</h4>
+        <p>
+          The two-part sixth season finale is full of classic sitcom tropes, from an ex (Tom Selleck) coming back in the picture at the worst possible time, to a couple of fake-outs about whether or not the titular proposal would actually happen. Monica and Chandler’s relationship is the anchor of this hour-long arc, and watching Chandler fight so hard not to lose the love of his life after he had spent the majority of the series afraid of commitment was tear-inducing. The proposal itself is beautiful, with Monica trying to skirt tradition but losing control for once and Chandler managing to say the absolutely perfect thing. Around them, though, orbits some special stories about Rachel and Phoebe looking to the remaining guy friends as their own marriage back-ups and Joey beginning his own love affair with a boat.
+        </p>
+        <a class="watch-link" href="https://youtu.be/ZalJQs4odMU?si=VvPOX4uSeKtLPsN6" target="_blank" rel="noopener noreferrer">▶ Watch Episode</a>
+      </div>
+    </div>
+    <div class="episode-card">
+      <div class="rank"><h3>Honorable Mention</h3></div>
+      <div class="episode-img">
+        <img src="images/last.jpg" alt="The Last One">
+      </div>
+      <div class="episode-content">
+        <h4>Season 10, Episode 17 and 18: The Last One</h4>
+        <p>
+          Finales are notoriously tricky, especially for beloved sitcoms. How do you say goodbye without losing the lightheartedness that made it work in the first place? The Friends two-parter delivers (pun intended) on all fronts. Erica (Anna Faris) gives birth to the (surprise!) twins Monica and Chandler are adopting, while television’s greatest will they-won’t they ends on “will,” as Rachel ditches a new job in Paris to get back with Ross for good. And it features good-old hijinks like Joey giving Monica and Chandler a chick and a duck as house warming presents… which soon get stuck in a foosball table. Even the show’s seventh character, the Apartment, gets a touching send-off: As Monica and Chandler prepare to decamp to the ’burbs with their babies, all six Friends turn in the keys and head out for one last coffee. “Where?” Chandler quips. As if there could be any doubt.
+        </p>
+        <a class="watch-link" href="https://youtu.be/RCPoIOJUNos?si=zUacB4PzyLgKGBKz" target="_blank" rel="noopener noreferrer">▶ Watch Episode</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Section 4: Iconic Quotes -->
+<section id="section4" class="section">
+  <h2>Iconic Quotes</h2>
+
+  <div class="quote-grid">
+    <div class="quote-card">
+      <h3>Rachel Green</h3>
+      <ul>
+        <li><a href="https://youtu.be/oGt1RJSmQ-w?si=lzPzKOa1Y0499k8Q" target="_blank">"I got off the plane."</a></li>
+        <li><a href="https://youtu.be/ka9i55ClcI4?si=wT3idmBAQImh6uG2" target="_blank">"Isn't that just kick-you-in-the-crotch, spit-on-your-neck fantastic?"</a></li>
+        <li><a href="https://youtube.com/shorts/BdomGLzkOgA?si=R5srJsL36yVyRwiH" target="_blank">"Well, maybe I don't need your money. Wait, wait, I said maybe!"</a></li>
+        <li><a href="https://youtu.be/fWs2dWcNGu0?si=oPhpvMiatm43fSkW" target="_blank">"We are dessert stealers. We are living outside the law."</a></li>
+        <li><a href="https://youtu.be/JT7IISp7cU8?si=_30tP2227NJGLDHf" target="_blank">"Today, it's like there's rock bottom, 50 feet of crap, then me."</a></li>
+      </ul>
+    </div>
+
+    <div class="quote-card">
+      <h3>Ross Geller</h3>
+      <ul>
+        <li><a href="https://youtu.be/EGhHyaqZj40?si=weCCOFwW1bzBlFT9" target="_blank">"We were on a break!"</a></li>
+        <li><a href="https://youtu.be/8w3wmQAMoxQ?si=t85qA-D3vJk1UiO1" target="_blank">"PIVOT!!!"</a></li>
+        <li><a href="https://youtu.be/qorBzcjfEmc?si=QVIAQvUK-euYrQ9z" target="_blank">"You're over me? When were you... under me?"</a></li>
+        <li><a href="https://youtu.be/UPW3iSLPrPg?si=9RdYD4Hui1S1c2J2" target="_blank">"Unagi."</a></li>
+        <li><a href="https://youtu.be/RgDx_Jbl1W4?si=YTjDe1LVBjTnUro8" target="_blank">"I grew up with Monica. If you didn't eat fast, you didn't eat."</a></li>
+      </ul>
+    </div>
+
+    <div class="quote-card">
+      <h3>Monica Geller</h3>
+      <ul>
+        <li><a href="https://youtu.be/8DQel_xMD2M?si=hWO3hOP6iJP18BAM" target="_blank">"Welcome to the real world. It sucks. You're gonna love it."</a></li>
+        <li><a href="https://youtube.com/shorts/oUBiKdO3FYU?si=Fxb9686WsJsvPWPC" target="_blank">"Is it me? Is it like I have some sort of beacon that only dogs and men with severe emotional problems can hear?"</a></li>
+        <li><a href="https://youtu.be/YXmgBKZaafw?si=48sSxJN69MWnK2DT" target="_blank">"I KNOW!"</a></li>
+        <li><a href="https://youtube.com/shorts/oWvURAKGFFw?si=MYktByi_--C6MQjf" target="_blank">"I've got this uncontrollable need to please people."</a></li>
+        <li><a href="https://x.com/friendscatalog/status/1537122090314260481" target="_blank">"Be careful and efficient. And remember, if I am harsh with you, it is only because you're doing it wrong."</a></li>
+      </ul>
+    </div>
+
+    <div class="quote-card">
+      <h3>Chandler Bing</h3>
+      <ul>
+        <li><a href="https://youtu.be/ZYNqY3dqB_0?si=yZhms1DbSN7BroSz" target="_blank">"I'm not great at the advice. Can I interest you in a sarcastic comment?"</a></li>
+        <li><a href="https://youtu.be/PDtPpbuYfYs?si=tSgvd-T-o3z5GnOz" target="_blank">"I'm hopeless and awkward and desperate for love!"</a></li>
+        <li><a href="https://youtube.com/shorts/fcVCqP7jJiw?si=c48tbdWdOetgjDNo" target="_blank">"Dear God, this parachute is a knapsack!"</a></li>
+        <li><a href="https://youtube.com/shorts/rApBH2votNM?si=BGYUAi1w-xGINi1B" target="_blank">"I say more dumb things before 9 a.m. than most people say all day."</a></li>
+        <li><a href="https://youtu.be/l4CZXDtDLYk?si=k3L5aaXT9DCgMvob" target="_blank">"I'm sorry, we don't have your sheep."</a></li>
+      </ul>
+    </div>
+
+    <div class="quote-card">
+      <h3>Phoebe Buffay</h3>
+      <ul>
+        <li><a href="https://youtu.be/6BN6hgpv9rI?si=FL7-6EN528hr5-NJ" target="_blank">"Oh, I wish I could, but I don't want to."</a></li>
+        <li><a href="https://youtu.be/a4CS2tCjAgk?si=YVNhOg8ppnaNXPpB" target="_blank">"They don't know that we know they know we know."</a></li>
+        <li><a href="https://youtube.com/shorts/Ci1bXg2a5gY?si=YVt9AFVjGwuXnzHQ" target="_blank">"Your collective dating record reads like a who's who of human crap."</a></li>
+        <li><a href="https://youtu.be/JRH8jAx5MeE?si=dg8fF8Yy2IzgLkmX" target="_blank">"See? He's her lobster."</a></li>
+        <li><a href="https://youtube.com/shorts/T_htAEBu0A0?si=XOQ8egwS2GjKQVia" target="_blank">"Something is wrong with the left phalange."</a></li>
+      </ul>
+    </div>
+
+    <div class="quote-card">
+      <h3>Joey Tribbiani</h3>
+      <ul>
+        <li><a href="https://youtu.be/CLvXFVbb82Q?si=uf537TfdSZWQ75a4" target="_blank">"How you doin'?"</a></li>
+        <li><a href="https://youtube.com/shorts/Q4I8kC5VKzU?si=IzCIBjqyWT8JTHJZ" target="_blank">"Joey doesn't share food!"</a></li>
+        <li><a href="https://youtu.be/zxCY0KsCCLI?si=F-Z_A93TY_ujoxQ3" target="_blank">"Could I BE wearing any more clothes?!"</a></li>
+        <li><a href="https://youtu.be/WGRzc9vN2T0?si=VTtHHGHUhvb56WXS" target="_blank">"If he doesn't like you, this is all a moo-point."</a></li>
+        <li><a href="https://youtu.be/rpFqyWChCYw?si=x0wxvf35bWqRtxpP" target="_blank">"She's my friend and she needed help. If I had to, I'd pee on any one of you!"</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- Section 5: Gallery -->
+<section id="section5" class="section">
+  <h2>Gallery</h2>
+  <div class="gallery-grid">
+    <!-- 15 Images -->
+    <div class="gallery-item"><img src="images/gallery1.jpg" alt="Image 1"></div>
+    <div class="gallery-item"><img src="images/gallery2.avif" alt="Image 2"></div>
+    <div class="gallery-item"><img src="images/gallery3.jpg" alt="Image 3"></div>
+    <div class="gallery-item"><img src="images/gallery4.webp" alt="Image 4"></div>
+    <div class="gallery-item"><img src="images/gallery5.webp" alt="Image 5"></div>
+    <div class="gallery-item"><img src="images/gallery6.webp" alt="Image 6"></div>
+    <div class="gallery-item"><img src="images/gallery7.webp" alt="Image 7"></div>
+    <div class="gallery-item"><img src="images/gallery8.webp" alt="Image 8"></div>
+    <div class="gallery-item"><img src="images/gallery9.webp" alt="Image 9"></div>
+    <div class="gallery-item"><img src="images/gallery10.webp" alt="Image 10"></div>
+    <div class="gallery-item"><img src="images/gallery11.webp" alt="Image 11"></div>
+    <div class="gallery-item"><img src="images/gallery12.webp" alt="Image 12"></div>
+    <div class="gallery-item"><img src="images/gallery13.webp" alt="Image 13"></div>
+    <div class="gallery-item"><img src="images/gallery14.webp" alt="Image 14"></div>
+    <div class="gallery-item"><img src="images/gallery15.webp" alt="Image 15"></div>
+  </div>
+
+  <!-- Modal -->
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+    <span class="arrow left">&#10094;</span>
+    <span class="arrow right">&#10095;</span>
+  </div>
+</section>
+
+<style>
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    max-width: 1000px;
+    margin: 20px auto;
+  }
+  .gallery-item img {
+    width: 100%;
+    height: 160px;
+    object-fit: cover;
+    cursor: pointer;
+    border-radius: 6px;
+    transition: transform 0.2s ease;
+  }
+  .gallery-item img:hover {
+    transform: scale(1.05);
+  }
+
+  .modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    top: 0; left: 0;
+    width: 100vw; height: 100vh;
+    background-color: rgba(0, 0, 0, 0.9);
+    justify-content: center;
+    align-items: center;
+  }
+  .modal-content {
+    max-width: 90vw;
+    max-height: 80vh;
+    object-fit: contain;
+    border-radius: 10px;
+  }
+  .close, .arrow {
+    position: absolute;
+    color: white;
+    font-size: 3rem;
+    font-weight: bold;
+    cursor: pointer;
+    user-select: none;
+  }
+  .close {
+    top: 20px;
+    right: 30px;
+  }
+  .arrow.left {
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+  }
+  .arrow.right {
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%);
+  }
+</style>
+
+<script>
+  const images = document.querySelectorAll("#section5 .gallery-item img");
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImage");
+  const closeBtn = document.querySelector(".modal .close");
+  const leftArrow = document.querySelector(".modal .arrow.left");
+  const rightArrow = document.querySelector(".modal .arrow.right");
+
+  let currentIndex = 0;
+
+  images.forEach((img, i) => {
+    img.addEventListener("click", () => {
+      currentIndex = i;
+      showImage();
+    });
+  });
+
+  function showImage() {
+    modal.style.display = "flex";
+    modalImg.src = images[currentIndex].src;
+  }
+
+  closeBtn.onclick = () => {
+    modal.style.display = "none";
+  };
+
+  leftArrow.onclick = () => {
+    currentIndex = (currentIndex - 1 + images.length) % images.length;
+    showImage();
+  };
+
+  rightArrow.onclick = () => {
+    currentIndex = (currentIndex + 1) % images.length;
+    showImage();
+  };
+
+  window.addEventListener("keydown", (e) => {
+    if (modal.style.display === "flex") {
+      if (e.key === "Escape") modal.style.display = "none";
+      if (e.key === "ArrowLeft") leftArrow.click();
+      if (e.key === "ArrowRight") rightArrow.click();
+    }
+  });
+</script>
+  </main>
+
+<footer style="color: #fdd835;">
+  <span class="pr">
+    <a href="https://www.warnerbros.com/tv/friends" target="_blank" rel="noopener noreferrer" style="color: #fdd835; text-decoration: none;">
+      <p>&copy; 2025 Friends Fan Experience | Built with ☕ & love from Central Perk</p>
+    </a>
+    <a href="https://moodle.tiu.ac.jp/admin/tool/dataprivacy/summary.php" target="_blank" rel="noopener noreferrer" style="color: #fdd835; text-decoration: none;">
+      <p>Wilson Edynata (Zheng) | 24224563</p>
+	</a>
+  </span>
+</footer>
+
+  <div class="pagetop" title="Back to top">
+    <a href="#"><i class="fas fa-angle-double-up"></i></a>
+  </div>
+
+  <script>
+    // Scroll to top button functionality
+    const pagetop = document.querySelector('.pagetop');
+    pagetop.addEventListener('click', (e) => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  </script>
+</body>
+</html>
