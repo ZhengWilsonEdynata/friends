@@ -1,2 +1,0 @@
-# friends
-a friends tribute
